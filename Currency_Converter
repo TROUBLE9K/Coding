@@ -1,0 +1,35 @@
+import java.util.*;
+
+public class CurrencyConverter {
+    public static void main(String[] args) {
+        
+        
+
+        Scanner scanner = new Scanner(System.in);
+
+        
+        System.out.print("Enter the amount in USD: ");
+        double amount_in_USD = scanner.nextDouble();
+
+        System.out.print("Enter the target currency : ");
+        String currency = scanner.next().toUpperCase();
+
+        double converted_Amount;
+        switch (currency) {
+            case "EUR":
+                converted_Amount = amount_in_USD * 0.86;
+                break;
+            case "GBP":
+                converted_Amount = amount_in_USD * 0.75;
+                break;
+            case "INR":
+                converted_Amount = amount_in_USD * 73.83;
+                break;
+            default:
+                System.out.println("Unsupported currency!");
+                return;
+        }
+
+        System.out.println("Converted amount: " + converted_Amount + " " + currency);
+    }
+}
