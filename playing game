@@ -1,0 +1,52 @@
+
+import java.util.*;
+class NumberGuessingGame {
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        Random r= new Random();
+        
+        int min= 1;
+        int max = 100;
+        int Attempts = 5;
+        int score = 0;
+        boolean retry= true;
+        
+        
+        
+        while (retry) {
+            int generatedNumber = random.nextInt(max - min + 1) + min;
+            int attempts = 0;
+            boolean correct_guess = false;
+            
+            System.out.println("\nI have generated a number between " + min + " and " + max+ ". Guess it!");
+
+            while (!correct_guess && attempts < Attempts) {
+                System.out.print("Enter your guess (Attempt " + (attempts + 1) + "/" + Attempts + "): ");
+                int user= scanner.nextInt();
+                
+                if (user< min|| user> max) {
+                    System.out.println("Please enter a number within the specified range.");
+                    continue;
+                }
+
+                attempts++;
+
+                if (user == generatedNumber) {
+                    System.out.println("Congratulations! You guessed the correct number in " + attempts + " attempts.");
+                    score++;
+                    correct_guess= true;
+                } else if (user< generatedNumber) {
+                    System.out.println("Invalid");
+                } else {
+                    System.out.println("Invalid");
+                }
+            }
+
+            if (!correct_guess) {
+                System.out.println("No attampts left anymore.Correct Number is: " + generatedNumber);
+            }
+
+            
+    }
+}
+}
