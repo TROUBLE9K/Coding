@@ -1,0 +1,68 @@
+import java.util.*;
+
+class Calculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Enter the number of subjects:");
+        int subjects = scanner.nextInt();
+        
+        int marks[] = new int[subjects];
+        int total_marks = 0;
+        int sum=0;
+        
+        System.out.println("Enter marks for each subject:");
+        for (int i = 0; i < subjects; i++) {
+            System.out.print("Subject " + (i + 1) + ": ");
+            marks[i] = scanner.nextInt();
+            total_marks += marks[i];
+        }
+        
+        double Percentage = (double) total_marks / subjects;
+        
+        System.out.println("\n Total marks in each subject is:");
+        for (int i = 0; i < subjects; i++) 
+        {
+            sum=sum+marks[i];
+            
+        }
+        System.out.println(sum);
+        
+        System.out.println("\nAverage percentage is: ");
+        System.out.println(Percentage);
+        
+        System.out.println("\nThe Grade is:");
+        if(Percentage>90 && Percentage<=100)
+        {
+            System.out.println("A++");
+        }
+        else if(Percentage>80 && Percentage<=90)
+        {
+            System.out.println("A+");
+        }
+        else if(Percentage>70 && Percentage<=80)
+        {
+            System.out.println("A");
+        }
+        else if(Percentage>60 && Percentage<=70)
+        {
+            System.out.println("B");
+        }
+        else if(Percentage>50 && Percentage<=60)
+        {
+            System.out.println("C");
+        }
+        else if(Percentage>0 && Percentage<50)
+        {
+            System.out.println("F");
+        }
+        else
+        {
+            System.out.println("Invalid");
+        }
+        
+        
+         
+        
+    }
+}
